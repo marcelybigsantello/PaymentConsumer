@@ -4,8 +4,6 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import com.masantello.paymentconsumer.utils.Formatter;
-
 public class Payment implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -56,19 +54,4 @@ public class Payment implements Serializable {
 	public void setPaymentDate(LocalDateTime paymentDate) {
 		this.paymentDate = paymentDate;
 	}
-
-	@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("Payment [ID=").append(id).append(", ")
-			.append("User [ID=").append(user.getId()).append(", ")
-				.append("username=").append(user.getUserName()).append(", ")
-				.append("email=").append(user.getUserEmail()).append("] ")
-			.append("Final Price=").append(Formatter.formatPrice(finalPrice)).append(", ")
-			.append("cardNumber=").append(cardNumber).append(", ")
-			.append("paymentDate=")	.append(Formatter.formatDateTime(paymentDate))
-		.append("]");
-		return sb.toString();
-	}
-
 }
