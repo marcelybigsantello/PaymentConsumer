@@ -1,4 +1,4 @@
-package com.masantello.payment_service;
+package com.masantello.paymentconsumer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
