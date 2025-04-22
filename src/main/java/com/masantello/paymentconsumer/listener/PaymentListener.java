@@ -22,8 +22,8 @@ public class PaymentListener {
 	}
 
 	@KafkaListener(
-			topics = "Valid.Payments",
-			groupId = "validation-group",
+			topics = "${kafka.topic.payment.name}",
+			groupId = "${kafka.topic.validation.group.id}",
 			containerFactory = "jsonContainerFactory"
 	)
 	public void validatePayment(@Payload Payment payment) throws InterruptedException {
@@ -34,8 +34,8 @@ public class PaymentListener {
 	}
 	
 	@KafkaListener(
-			topics = "Valid.Payments",
-			groupId = "email-group",
+			topics = "${kafka.topic.payment.name}",
+			groupId = "${kafka.topic.email.group.id}",
 			containerFactory = "jsonContainerFactory"
 	)
 	public void generateEmail() throws InterruptedException {
